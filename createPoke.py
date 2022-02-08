@@ -12,7 +12,7 @@ based off shape grab required body parts from assets of [pokemonIDs] -> random??
 
 layer body parts according to shape
 
-choose and apply color scheme
+choose and apply color scheme (pillow)
 
 
 
