@@ -57,15 +57,17 @@ def get_poke_type(type: str) -> pd.DataFrame:
     return poke.loc[poke['type'].str.contains(type)]
 
 
-def get_typed_dist(poke_spec: dict, k: int, measure_: str = 'euclidean') -> pd.DataFrame:
+def get_dist(poke_spec: dict, k: int, p_type: str = 'none', measure_: str = 'euclidean') -> pd.DataFrame:
     measure = euclidean if measure_ == 'euclidean' else manhattan
-    poke_typed = get_poke_type(poke_spec['type'])
+
+    poke_to_distance = get_poke_type(
+        poke_spec['type']) if p_type != 'none' else poke
 
     dists = []
-    for i in range(len(poke_typed)):
-        dists += [measure(poke_typed.iloc[i], poke_spec)]
+    for i in range(len(poke_to_distance)):
+        dists += [measure(poke_to_distance.iloc[i], poke_spec)]
 
-    return poke_typed.assign(
+    return poke_to_distance.assign(
         distance=dists).nsmallest(k, columns='distance')
 
 
@@ -79,4 +81,14 @@ target = {stat: values[i] for i, stat in enumerate(stats)}
 target['type'] = target_type
 k = 5
 
-get_typed_dist(target, k)
+typed_distance = get_dist(target, k, target['type'])
+
+all_distance = get_dist(target, k)
+
+# %%
+typed_distance.head(5)
+
+# %%
+all_distance.head(5)
+
+# %%
