@@ -23,6 +23,9 @@ import pandas as pd
 import random
 import math
 
+# gen 2 skiprows=152, nrows=100
+# gen 1 - 3 skiprows=1 nrows=386
+
 poke = pd.read_csv('Pokemon.csv', header=None, skiprows=152, nrows=100)
 poke.columns = field_names = ['name', 'dex', 'type', 'color', 'shape',
                               'hp', 'attack', 'defense', 'sp_attack', 'sp_defense', 'speed']
