@@ -2,12 +2,16 @@ import cv2
 import numpy as np
 import os
 
+current_dir = "assets/arm"
+
 # Get name of every file in directory, store in list
-all_files = os.listdir("arceus-main/assets/arm")
+all_files = os.listdir(current_dir)
 
 for img in all_files:
+	# Make sure the file is a png file.
 	if img[-3:] == 'png':
-		image = cv2.imread("arceus-main/assets/arm/" + img, cv2.IMREAD_UNCHANGED)
+		# Read in the image, keep the Alpha values
+		image = cv2.imread(current_dir + "/" + img, cv2.IMREAD_UNCHANGED)
 		#cv2.imshow('image', image)
 		#cv2.waitKey()
 		original = image.copy()
@@ -16,10 +20,10 @@ for img in all_files:
 		binary = cv2.bitwise_not(thresh)
 
 		x,y,w,h = cv2.boundingRect(binary)
-		cv2.rectangle(image, (x,y), (x + w, y + h), (36,255,12), 2)
+		#cv2.rectangle(image, (x,y), (x + w, y + h), (36,255,12), 2)
 		ROI = original[y:y+h, x:x+w]
 	
-		cv2.imwrite("arceus-main/assets/arm/" + img, ROI)
+		cv2.imwrite(current_dir + "/" + img, ROI)
 
 
 #####################################################################################################
