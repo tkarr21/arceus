@@ -2,28 +2,29 @@ import cv2
 import numpy as np
 import os
 
-current_dir = "assets/arm"
+current_dir = "assets/wing"
 
 # Get name of every file in directory, store in list
 all_files = os.listdir(current_dir)
 
 for img in all_files:
-	# Make sure the file is a png file.
-	if img[-3:] == 'png':
-		# Read in the image, keep the Alpha values
-		image = cv2.imread(current_dir + "/" + img, cv2.IMREAD_UNCHANGED)
-		#cv2.imshow('image', image)
-		#cv2.waitKey()
-		original = image.copy()
-		gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-		thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
-		binary = cv2.bitwise_not(thresh)
+    # Make sure the file is a png file.
+    if img[-3:] == 'png':
+        # Read in the image, keep the Alpha values
+        image = cv2.imread(current_dir + "/" + img, cv2.IMREAD_UNCHANGED)
+        #cv2.imshow('image', image)
+        # cv2.waitKey()
+        original = image.copy()
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        thresh = cv2.threshold(
+            gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
+        binary = cv2.bitwise_not(thresh)
 
-		x,y,w,h = cv2.boundingRect(binary)
-		#cv2.rectangle(image, (x,y), (x + w, y + h), (36,255,12), 2)
-		ROI = original[y:y+h, x:x+w]
-	
-		cv2.imwrite(current_dir + "/" + img, ROI)
+        x, y, w, h = cv2.boundingRect(binary)
+        #cv2.rectangle(image, (x,y), (x + w, y + h), (36,255,12), 2)
+        ROI = original[y:y+h, x:x+w]
+
+        cv2.imwrite(current_dir + "/" + img, ROI)
 
 
 #####################################################################################################
