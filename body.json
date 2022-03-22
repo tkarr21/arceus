@@ -1,18 +1,112 @@
 {
     "upright": {
-        "4": {}, 
-        "31": {}, 
-        "36": {}, 
-        "54": {}, 
-        "94": {}, 
-        "105": {}, 
-        "115": {},
-        "150": {}, 
-        "159": {},
-        "217": {}, 
-        "252": {},
-        "259": {},
-        "383": {} },
+        "4": {
+            "head": {},
+            "left-arm": {},
+            "righ-arm": {},
+            "left-leg": {},
+            "right-leg": {}
+        }, 
+        "31": {
+            "head": {},
+            "left-arm": {},
+            "righ-arm": {},
+            "left-leg": {},
+            "right-leg": {}
+        }, 
+        "36": {
+            "head": {},
+            "left-arm": {},
+            "righ-arm": {},
+            "left-leg": {},
+            "right-leg": {}
+        }, 
+        "54": {
+            "head": {},
+            "left-arm": {},
+            "righ-arm": {},
+            "left-leg": {},
+            "right-leg": {}
+        }, 
+        "94": {
+            "head": {},
+            "left-arm": {},
+            "righ-arm": {},
+            "left-leg": {},
+            "right-leg": {}
+        }, 
+        "105": {
+            "head": {},
+            "left-arm": {},
+            "righ-arm": {},
+            "left-leg": {},
+            "right-leg": {}
+        }, 
+        "115": {
+            "head": {},
+            "left-arm": {},
+            "righ-arm": {},
+            "left-leg": {},
+            "right-leg": {}
+        },
+        "150": {
+            "head": {},
+            "left-arm": {},
+            "righ-arm": {},
+            "left-leg": {},
+            "right-leg": {}
+        }, 
+        "159": {
+            "head": {},
+            "left-arm": {},
+            "righ-arm": {},
+            "left-leg": {},
+            "right-leg": {}
+        },
+        "217": {
+            "head": {},
+            "left-arm": {},
+            "righ-arm": {},
+            "left-leg": {},
+            "right-leg": {}
+        }, 
+        "252": {
+            "head": {},
+            "left-arm": {},
+            "righ-arm": {},
+            "left-leg": {},
+            "right-leg": {}
+        },
+        "259": {
+            "head": {},
+            "left-arm": {},
+            "righ-arm": {},
+            "left-leg": {},
+            "right-leg": {}
+        },
+        "383": {
+            "head": {
+                "x": 20, 
+                "y": 15
+            },
+             "left-leg":  {
+                "x": 20, 
+                "y": 42
+            },
+            "right-leg":  {
+                "x": 41, 
+                "y": 42
+            },
+            "left-arm": {
+                "x": 20,
+                "y": 35
+            },
+            "right-arm":  {
+                "x": 40, 
+                "y": 30
+            }
+        } 
+    },
     "quadraped": {
         "59": {},
         "77": {},
@@ -24,7 +118,28 @@
         "196": {},
         "197": {},
         "203": {},
-        "229": {},
+        "229": {
+            "head": {
+                "x": 23,
+                "y": 21
+            },
+            "tail": {
+                "x": 46,
+                "y": 22
+            },
+            "back-right-leg": {
+                "x": 47,
+                "y": 29
+            },
+            "front-left-leg": {
+                "x": 25,
+                "y": 34
+            },
+            "front-right-leg": {
+                "x": 35,
+                "y": 37
+            }
+        },
         "244": {}
     },
     "humanoid": {
