@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import os
 
-current_dir = "assets/wing"
+current_dir = "/Users/tylerkarren/Desktop/tmp"
 
 # Get name of every file in directory, store in list
 all_files = os.listdir(current_dir)
