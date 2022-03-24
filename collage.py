@@ -85,7 +85,7 @@ def main():
             "tail": "assets/tail/259.png"
         }
         collage('assets/body/229.png',
-                data['quadraped']["229"], appendage_assets)
+                data['quadruped']["229"], appendage_assets)
 
     return
 
