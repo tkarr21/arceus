@@ -92,24 +92,24 @@
     "quadruped": {
         "58": {
             "head": {
-                "x": 27,
-                "y": 29
+                "x": 23,
+                "y": 31
             },
             "tail": {
                 "x": 46,
                 "y": 26
             },
-            "back-right-leg": {
-                "x": 48,
-                "y": 33
-            },
             "front-left-leg": {
                 "x": 20,
-                "y": 45
+                "y": 42
             },
             "front-right-leg": {
                 "x": 35,
                 "y": 40
+            },
+            "back-right-leg": {
+                "x": 48,
+                "y": 33
             }
         },
         "77": {
@@ -121,10 +121,6 @@
                 "x": 47,
                 "y": 26
             },
-            "back-right-leg": {
-                "x": 46,
-                "y": 34
-            },
             "front-left-leg": {
                 "x": 22,
                 "y": 40
@@ -132,6 +128,10 @@
             "front-right-leg": {
                 "x": 30,
                 "y": 39
+            },
+            "back-right-leg": {
+                "x": 46,
+                "y": 34
             }
         },
         "203": {
@@ -143,10 +143,6 @@
                 "x": 54,
                 "y": 34
             },
-            "back-right-leg": {
-                "x": 46,
-                "y": 46
-            },
             "front-left-leg": {
                 "x": 22,
                 "y": 43
@@ -154,6 +150,10 @@
             "front-right-leg": {
                 "x": 32,
                 "y": 45
+            },
+            "back-right-leg": {
+                "x": 46,
+                "y": 46
             }
         },
         "229": {
@@ -165,10 +165,6 @@
                 "x": 46,
                 "y": 22
             },
-            "back-right-leg": {
-                "x": 47,
-                "y": 29
-            },
             "front-left-leg": {
                 "x": 25,
                 "y": 34
@@ -176,6 +172,10 @@
             "front-right-leg": {
                 "x": 35,
                 "y": 37
+            },
+            "back-right-leg": {
+                "x": 47,
+                "y": 29
             }
         },
         "244": {}
