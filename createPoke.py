@@ -248,9 +248,23 @@ class Arceus:
 def main():
     arceus = Arceus()
 
+    # input ranges
+    # hp            1 - 255
+    # attack        5 - 160
+    # defense       5 - 230
+    # sp_attack     10 - 154
+    # sp_defense    20 - 230
+    # speed         5 - 160
+
     # inputs
     stats = ['hp', 'attack', 'defense', 'sp_attack', 'sp_defense', 'speed']
-    values = [75, 86, 68, 31, 42, 91]
+    # values = [75, 86, 68, 31, 42, 91]
+    # target_type = 'fire'
+    # values = [200, 120, 180, 100, 185, 110]
+    # target_type = 'electric'
+    # values = [10, 150, 25, 154, 20, 50]
+    # target_type = 'fire'
+    values = [220, 80, 200, 55, 210, 40]
     target_type = 'fire'
 
     target = {stat: values[i] for i, stat in enumerate(stats)}
