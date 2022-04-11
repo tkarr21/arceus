@@ -6,7 +6,7 @@ from PIL import Image
 def collage(body_img: str, body_anchors: dict, appendage_assets, color=None):
     size = 128
     shift = size // 4
-    new = Image.new('RGBA', (size, size))
+    new = Image.new('RGB', (size, size), 'white')
 
     # paste body
     body = Image.open(body_img)
@@ -49,7 +49,8 @@ def collage(body_img: str, body_anchors: dict, appendage_assets, color=None):
         #   color processing of assets
 
         new.paste(img, (x + shift, y + shift), img)
-    new.show()
+
+    return new
 
 
 def main():

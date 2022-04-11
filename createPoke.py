@@ -6,6 +6,7 @@ import math
 import json
 import os
 from collage import collage
+from color_poke import coloring_img
 
 
 class Arceus:
@@ -241,8 +242,9 @@ class Arceus:
         print(f'assets/body/{body_template}.png')
         print(json.dumps(appendage_assets, indent=4))
 
-        collage(f'assets/body/{body_template}.png',
-                self.body_json[shape][str(body_template)], appendage_assets)
+        new_poke = collage(f'assets/body/{body_template}.png',
+                           self.body_json[shape][str(body_template)], appendage_assets)
+        coloring_img(new_poke, target['type'])
 
 
 def main():
