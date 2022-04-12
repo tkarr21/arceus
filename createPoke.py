@@ -264,10 +264,10 @@ def main():
     # target_type = 'fire'
     # values = [200, 120, 180, 100, 185, 110]
     # target_type = 'electric'
-    # values = [10, 150, 25, 154, 20, 50]
-    # target_type = 'fire'
-    values = [220, 80, 200, 55, 210, 40]
-    target_type = 'fire'
+    values = [10, 150, 25, 154, 20, 50]
+    target_type = 'poison'
+    # values = [220, 80, 200, 55, 210, 40]
+    # target_type = 'normal'
 
     target = {stat: values[i] for i, stat in enumerate(stats)}
     target['type'] = target_type

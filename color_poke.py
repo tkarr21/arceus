@@ -4,15 +4,15 @@ from PIL import Image, ImageOps
 def coloring_img(img, type):
     color = None
     if type == 'normal':
-        color = 'sandybrown'
+        color = 'tan'
     elif type == 'fire':
-        color = 'red'  # 'chocolate'
+        color = 'red'
     elif type == 'water':
         color = 'cornflowerblue'
     elif type == 'grass':
-        color = 'limegreen'
+        color = 'seagreen'
     elif type == 'electric':
-        color = 'gold'
+        color = 'goldenrod'
     elif type == 'ice':
         color = 'darkturquoise'
     elif type == 'fighting':
@@ -41,15 +41,14 @@ def coloring_img(img, type):
         color = 'salmon'
 
     # applying grayscale method
-    print(img.size)
-    img.show()
     gray_image = ImageOps.grayscale(img)
-    gray_image.show()
-    print(gray_image.size)
 
     # background coloring and pasting gray
     background = Image.new('RGBA', gray_image.size, color)
     background.paste(gray_image, (0, 0), gray_image)
+
+    img.show()
+    gray_image.show()
     background.show()
 
 
@@ -60,7 +59,7 @@ def main():
     types = ['normal', 'fire', 'water', 'grass', 'electric', 'ice', 'fighting', 'poison',
              'ground', 'flying', 'psychic', 'bug', 'rock', 'ghost', 'dark', 'dragon', 'steel', 'fairy']
 
-    coloring_img(og_image, types[5])
+    coloring_img(og_image, types[9])
 
 
 if __name__ == "__main__":

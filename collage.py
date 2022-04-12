@@ -6,11 +6,11 @@ from PIL import Image
 def collage(body_img: str, body_anchors: dict, appendage_assets, color=None):
     size = 128
     shift = size // 4
-    new = Image.new('RGB', (size, size), 'white')
+    new = Image.new('RGBA', (size, size), 'white')
 
     # paste body
     body = Image.open(body_img)
-    new.paste(body, (shift, shift))
+    new.paste(body, (shift, shift), body)
 
     # paste members
     for k, v in body_anchors.items():
