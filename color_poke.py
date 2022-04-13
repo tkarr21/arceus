@@ -3,53 +3,52 @@ from PIL import Image, ImageOps
 
 def coloring_img(img, type):
     color = None
+    black = "black"
     if type == 'normal':
-        color = 'tan'
+        color = 'papayawhip'
     elif type == 'fire':
-        color = 'red'
+        color = '#ff9980'
     elif type == 'water':
-        color = 'cornflowerblue'
+        color = '#80bfff'
     elif type == 'grass':
-        color = 'seagreen'
+        color = '#9fdf9f'
     elif type == 'electric':
-        color = 'goldenrod'
+        color = '#ffff99'
     elif type == 'ice':
-        color = 'darkturquoise'
+        color = '#ccffff'
     elif type == 'fighting':
-        color = 'brown'
+        color = '#ff9999'
     elif type == 'poison':
-        color = 'DarkMagenta'
+        color = '#d580ff'
     elif type == 'ground':
-        color = 'peru'
+        color = '#ffd699'
     elif type == 'flying':
-        color = 'rosybrown'
+        color = '#f2e6ff'
     elif type == 'psychic':
-        color = 'palevioletred'
+        color = '#ffccff'
     elif type == 'bug':
-        color = 'olivedrab'
+        color = '#ccff99'
     elif type == 'rock':
-        color = 'darkgoldenrod'
+        color = '#e6ccb3'
     elif type == 'ghost':
-        color = 'rebeccapurple'
+        color = '#330033'
+        black = 'white'
     elif type == 'dark':
-        color = 'darkslategrey'
+        color = '#c7c7c7'
     elif type == 'dragon':
-        color = 'mediumslateblue'
+        color = '#9999ff'
     elif type == 'steel':
-        color = 'lightslategray'
+        color = '#d0d0e1'
     elif type == 'fairy':
-        color = 'salmon'
+        color = '#ffe6ff'
 
     # applying grayscale method
     gray_image = ImageOps.grayscale(img)
+    colored = ImageOps.colorize(gray_image, black=black, white=color)
 
-    # background coloring and pasting gray
-    background = Image.new('RGBA', gray_image.size, color)
-    background.paste(gray_image, (0, 0), gray_image)
-
-    img.show()
-    gray_image.show()
-    background.show()
+    # img.show()
+    colored.show()
+    # gray_image.show()
 
 
 def main():
@@ -59,7 +58,7 @@ def main():
     types = ['normal', 'fire', 'water', 'grass', 'electric', 'ice', 'fighting', 'poison',
              'ground', 'flying', 'psychic', 'bug', 'rock', 'ghost', 'dark', 'dragon', 'steel', 'fairy']
 
-    coloring_img(og_image, types[9])
+    coloring_img(og_image, types[13])
 
 
 if __name__ == "__main__":
