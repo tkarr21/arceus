@@ -22,6 +22,14 @@ class Arceus:
         with open('body.json') as f:
             self.body_json = json.load(f)
 
+        self.head_json = None
+        self.arm_json = None
+        self.leg_json = None
+        self.tail_json = None
+        with open('attachment.json') as f:
+            attachment = json.load(f)
+            self.head_json = attachment['head']
+
         self.type_egg_json = None
         with open('type_egg.json') as f:
             self.type_egg_json = json.load(f)
@@ -144,6 +152,7 @@ class Arceus:
 
     def get_appendages(self, target, parts):
         appendages = {}
+        anchors = {}
 
         num_arms = 0
         num_legs = 0
@@ -153,7 +162,9 @@ class Arceus:
         for part in parts:
             if part == 'head':
                 egg_group = self.get_egg_group(target['type'])
-                appendages[part] = f'assets/head/{self.get_head(target, egg_group)}.png'
+                head_donor = self.get_head(target, egg_group)
+                appendages[part] = f'assets/head/{head_donor}.png'
+                anchors[part] = self.head_json[str(head_donor)]
             if part == 'tail':
                 egg_group = self.get_egg_group(target['type'])
                 appendages[part] = f'assets/tail/{self.get_tail(target, egg_group)}.png'
@@ -212,7 +223,7 @@ class Arceus:
                     appendages[part] = f'assets/fin/{fin_donor}-{count}.png'
                     count += 1
 
-        return appendages
+        return appendages, anchors
 
     def get_body_template(self, target, shape):
         candidates = None
@@ -237,13 +248,14 @@ class Arceus:
         body_template = self.get_body_template(target, shape)
 
         required_parts = list(self.body_json[shape][body_template].keys())
-        appendage_assets = self.get_appendages(target, required_parts)
+        appendage_assets, appendage_anchors = self.get_appendages(
+            target, required_parts)
 
         print(f'assets/body/{body_template}.png')
         print(json.dumps(appendage_assets, indent=4))
 
         new_poke = collage(f'assets/body/{body_template}.png',
-                           self.body_json[shape][str(body_template)], appendage_assets)
+                           self.body_json[shape][str(body_template)], appendage_assets, appendage_anchors)
         coloring_img(new_poke, target['type'])
 
 
@@ -264,9 +276,9 @@ def main():
     # target_type = 'fire'
     # values = [200, 120, 180, 100, 185, 110]
     # target_type = 'electric'
-    values = [10, 150, 25, 154, 20, 50]
-    target_type = 'poison'
-    # values = [220, 80, 200, 55, 210, 40]
+    #values = [10, 150, 25, 154, 20, 50]
+    target_type = 'fighting'
+    values = [220, 80, 200, 55, 210, 40]
     # target_type = 'normal'
 
     target = {stat: values[i] for i, stat in enumerate(stats)}

@@ -17,7 +17,7 @@ def coloring_img(img, type):
     elif type == 'ice':
         color = '#ccffff'
     elif type == 'fighting':
-        color = '#ff9999'
+        color = '#c98383'
     elif type == 'poison':
         color = '#d580ff'
     elif type == 'ground':
@@ -46,9 +46,9 @@ def coloring_img(img, type):
     gray_image = ImageOps.grayscale(img)
     colored = ImageOps.colorize(gray_image, black=black, white=color)
 
-    # img.show()
+    img.show()
     colored.show()
-    # gray_image.show()
+    gray_image.show()
 
 
 def main():
