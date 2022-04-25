@@ -1,6 +1,7 @@
 import json
 from unittest import case
 from PIL import Image
+from color_poke import coloring_img
 
 
 def collage(body_img: str, body_anchors: dict, appendage_assets, appendage_anchors):
@@ -79,10 +80,20 @@ def main():
                 "front-right-leg": "assets/leg/262-2.png",
                 "tail": "assets/tail/259.png"
             }
-            appendage_anchors = {'head': anchors['head']['350']}
 
-            collage('assets/body/229.png',
-                    data['quadruped']["229"], appendage_assets, appendage_anchors)
+            appendage_assets = {
+                "left-leg": "assets/leg/9-1.png",
+                "right-leg": "assets/leg/9-2.png",
+                "left-arm": "assets/arm/36-1.png",
+                "head": "assets/head/132.png",
+                "right-arm": "assets/arm/36-2.png"
+            }
+            appendage_anchors = {'head': anchors['head']['132']}
+
+            collage('assets/body/383.png',
+                    data['upright']["383"], appendage_assets, appendage_anchors)
+            coloring_img(collage('assets/body/383.png',
+                                 data['upright']["383"], appendage_assets, appendage_anchors), 'normal')
 
     return
 
