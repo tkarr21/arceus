@@ -1,5 +1,4 @@
 import json
-from unittest import case
 from PIL import Image
 from color_poke import coloring_img
 
